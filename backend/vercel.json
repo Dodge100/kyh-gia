@@ -1,0 +1,12 @@
+{
+    "buildCommand": "pip install -r requirements.txt",
+    "builds": [
+        {
+          "src": "run.py",
+          "use": "@vercel/python"
+        }
+    ],
+    "rewrites": [
+        { "source": "/(.*)", "destination": "run.py" }
+    ]
+}

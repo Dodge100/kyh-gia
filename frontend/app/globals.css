@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* `html body` and `!important` needed to override bug in the drawer
+library shadcn ui uses, vaul: https://github.com/emilkowalski/vaul/issues/285 */
+html body[data-scroll-locked] {
+  margin-right: 17px !important;
+}
+
+body {
+  @apply bg-[hsl(var(--background))];
+}
+
+@layer base {
+  .link {
+    @apply link-no-underline underline visited:text-purple-600;
+  }
+
+  .link-no-underline {
+    @apply text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-500;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 36, 28%, 93%;
+    --foreground: 266 5% 10%;
+    --card: 220 20% 91%;
+    --card-foreground: 266 5% 15%;
+    --popover: 266 100% 95%;
+    --popover-foreground: 266 100% 10%;
+    --primary: 266 81.3% 37.6%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 266 30% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 228 30% 85%;
+    --muted-foreground: 266 5% 35%;
+    --accent: 228 30% 80%;
+    --accent-foreground: 266 5% 15%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 266 5% 90%;
+    --border: 266 30% 50%;
+    --input: 266 30% 26%;
+    --ring: transparent;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 49 7% 7%;
+    --foreground: 49 5% 90%;
+    --card: 0 0% 15%;
+    --card-foreground: 49 5% 90%;
+    --popover: 49 50% 5%;
+    --popover-foreground: 49 5% 90%;
+    --primary: 49 100% 46.1%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 49 30% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 11 30% 25%;
+    --muted-foreground: 49 5% 60%;
+    --accent: 58 30% 25%;
+    --accent-foreground: 49 5% 90%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 49 5% 90%;
+    --border: 49 30% 26%;
+    --input: 49 30% 26%;
+    --ring: transparent;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

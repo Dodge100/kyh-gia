@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:import/recommended",
+    "next/core-web-vitals"
+  ],
+  "plugins": ["simple-import-sort", "only-warn"],
+  "rules": {
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
+    "import/first": "warn",
+    "import/newline-after-import": "warn",
+    "import/no-duplicates": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "no-unused-vars": "warn",
+    "tailwindcss/no-custom-classname": "off",
+    "react/self-closing-comp": "warn"
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  }
+}
